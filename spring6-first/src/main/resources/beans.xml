@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--在配置文件中创建 user 对象
+     使用 bean 标签, 属性如下：
+        id：bean 的唯一标识
+        class：全类名
+     -->
+
+    <bean id="user" class="com.fredo.spring6.User"/>
+
+</beans>
