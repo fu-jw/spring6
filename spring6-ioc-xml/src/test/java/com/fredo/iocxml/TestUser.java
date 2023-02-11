@@ -1,6 +1,8 @@
 package com.fredo.iocxml;
 
 import com.fredo.iocxml.bean.UserDao;
+import com.fredo.iocxml.di.Book;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -15,7 +17,6 @@ public class TestUser {
      *  5.bean的生命周期
      *  6.基于XML的自动装配
      */
-
     // 1.bean的获取
     @Test
     public void test1(){
@@ -53,6 +54,19 @@ public class TestUser {
          *          其实只是看：『对象 instanceof 指定的类型』的返回结果，
          *          只要返回的是true就可以认定为和类型匹配，能够获取到。
          */
+
     }
 
+    // 2.依赖注入--setter
+    @Test
+    public void test2(){
+        ApplicationContext ioc = new ClassPathXmlApplicationContext("beans.xml");
+        // 1.依赖注入--setter
+        Book book1 = (Book) ioc.getBean("book1");
+        System.out.println(book1);
+
+        // 2.依赖注入--构造器
+        Book book2 = (Book) ioc.getBean("book2");
+        System.out.println(book2);
+    }
 }

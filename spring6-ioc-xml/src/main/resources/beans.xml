@@ -17,4 +17,18 @@
     -->
 <!--    <bean id="personDao" class="com.fredo.iocxml.bean.PersonDaoImpl"/>-->
 
+    <!--依赖注入-setter-->
+    <bean class="com.fredo.iocxml.di.Book" id="book1">
+        <!-- property标签：通过组件类的setXxx()方法给组件对象设置属性 -->
+        <!-- name属性：指定属性名（这个属性名是getXxx()、setXxx()方法定义的，和成员变量无关） -->
+        <!-- value属性：指定属性值 -->
+        <property name="name" value="语文"/>
+        <property name="author" value="老舍"/>
+    </bean>
+    <!--依赖注入-构造器-->
+    <bean class="com.fredo.iocxml.di.Book" id="book2">
+        <!--注意：按照属性的顺序-->
+        <constructor-arg value="数学"/>
+        <constructor-arg value="华罗庚"/>
+    </bean>
 </beans>
