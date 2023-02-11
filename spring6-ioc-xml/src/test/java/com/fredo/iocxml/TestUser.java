@@ -1,5 +1,6 @@
 package com.fredo.iocxml;
 
+import com.fredo.iocxml.bean.UserDao;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -36,7 +37,22 @@ public class TestUser {
          *  根据类型获取bean时(根据ID和类型获取bean，不会报错)，相同类型只能配置一个！！！
          *  否则报错：No qualifying bean of type 'com.fredo.iocxml.User' available:
          *          expected single matching bean but found 2: user,user2
-         *
+         */
+        // 4.根据接口的实现类获取的bean
+        UserDao userDao1 = ioc.getBean(UserDao.class);
+        System.out.println("根据接口的实现类获取的bean："+ userDao1);
+
+        // 5.根据接口的实现类获取的bean，多个实现类时，报错
+//        UserDao userDao2 = ioc.getBean(UserDao.class);
+//        System.out.println("根据接口的实现类获取的bean："+ userDao2);
+        /**
+         * 同一个接口，不能配置两个实现类，
+         *  否则报错：No qualifying bean of type 'com.fredo.iocxml.bean.UserDao' available:
+         *          expected single matching bean but found 2: userDao,personDao
+         *  【原因】：根据类型来获取bean时，在满足bean唯一性的前提下，
+         *          其实只是看：『对象 instanceof 指定的类型』的返回结果，
+         *          只要返回的是true就可以认定为和类型匹配，能够获取到。
          */
     }
+
 }

@@ -7,4 +7,10 @@
     <bean class="com.fredo.iocxml.User" id="user"/>
     <!--根据类型获取bean时(根据ID和类型获取bean，不会报错)，相同类型只能配置一个！！！-->
 <!--    <bean class="com.fredo.iocxml.User" id="user2"/>-->
+
+    <!--一个接口实现类获取过程-->
+    <!--不能直接配置该接口，而是其实现类-->
+    <bean id="userDao" class="com.fredo.iocxml.bean.UserDaoImpl"/>
+    <bean id="personDao" class="com.fredo.iocxml.bean.PersonDaoImpl"/>
+
 </beans>
