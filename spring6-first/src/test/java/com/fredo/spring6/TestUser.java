@@ -22,8 +22,10 @@ public class TestUser {
         // 3.使用对象调用方法
         user.add();
 
+        // 可以手动写日志信息
         logger.info("执行成功");
     }
+
     /**
      * 入门案例小结：
      * Spring 出现以前，创建对象需要无参构造器：
@@ -38,12 +40,15 @@ public class TestUser {
      *  4 使用反射，根据全类名(class的值)创建对象
      *
      * 2.为什么不自己new对象
-     *  1 后期可能居多的类，自己难以管理
-     *  2 交给Spring 方便管理
+     *  1 后期可能巨多的类，自己难以管理
+     *  2 解耦(依赖注入)
+     *  3 交给Spring 方便管理
      *
      * 3.Spring 创建的对象放在哪
      *  在 beanDefinitionMap中，是一个Map<String, BeanDefinition>
      *  key     是 bean 的 id
      *  value   是 bean 的定义(或描述信息) BeanDefinition
      */
+
+
 }
