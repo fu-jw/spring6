@@ -15,6 +15,6 @@
     否则报错：No qualifying bean of type 'com.fredo.iocxml.bean.UserDao' available:
             expected single matching bean but found 2: userDao,personDao
     -->
-    <bean id="personDao" class="com.fredo.iocxml.bean.PersonDaoImpl"/>
+<!--    <bean id="personDao" class="com.fredo.iocxml.bean.PersonDaoImpl"/>-->
 
 </beans>
