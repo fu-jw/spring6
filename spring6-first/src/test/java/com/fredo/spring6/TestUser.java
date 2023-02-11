@@ -3,11 +3,8 @@ package com.fredo.spring6;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import javax.swing.*;
 
 public class TestUser {
 
@@ -77,6 +74,8 @@ public class TestUser {
      *  2.在容器中，将Bean信息实例化，工厂(BeanFactory) + 反射
      *  3.对象初始化成最终的Bean对象，将实例化的空对象中的属性信息进行初始化
      *  4.getBean(“name”) 即可获取Bean对象
+     *
+     *  Bean 管理包含：对象创建和初始化（2和3）
      *
      * DI
      *  Dependency Injection 依赖注入，实现控制反转的具体实现
