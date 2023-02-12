@@ -69,4 +69,14 @@ public class TestUser {
         Book book2 = (Book) ioc.getBean("book2");
         System.out.println(book2);
     }
+
+    // 3.依赖注入--特殊值处理
+    @Test
+    public void test3(){
+        ApplicationContext ioc = new ClassPathXmlApplicationContext("beans.xml");
+        // 1.依赖注入--setter
+        Book book1 = (Book) ioc.getBean("book1");
+        System.out.println(book1);
+
+    }
 }

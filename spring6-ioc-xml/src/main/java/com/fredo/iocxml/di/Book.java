@@ -3,6 +3,9 @@ package com.fredo.iocxml.di;
 public class Book {
     private String name;
     private String author;
+    private String other1;
+    private String other2;
+    private String other3;
 
     // 快捷键：alt+insert
 
@@ -10,9 +13,12 @@ public class Book {
     public Book() {
     }
 
-    public Book(String name, String author) {
+    public Book(String name, String author, String other1, String other2, String other3) {
         this.name = name;
         this.author = author;
+        this.other1 = other1;
+        this.other2 = other2;
+        this.other3 = other3;
     }
 
     public void setName(String name) {
@@ -23,11 +29,26 @@ public class Book {
         this.author = author;
     }
 
+    public void setOther1(String other1) {
+        this.other1 = other1;
+    }
+
+    public void setOther2(String other2) {
+        this.other2 = other2;
+    }
+
+    public void setOther3(String other3) {
+        this.other3 = other3;
+    }
+
     @Override
     public String toString() {
         return "Book{" +
                 "name='" + name + '\'' +
                 ", author='" + author + '\'' +
+                ", other1='" + other1 + '\'' +
+                ", other2='" + other2 + '\'' +
+                ", other3='" + other3 + '\'' +
                 '}';
     }
 
@@ -39,7 +60,7 @@ public class Book {
         book1.setAuthor("高斯林");
 
         // 2.构造器注入
-        Book book2 = new Book("linux", "linas");
+//        Book book2 = new Book("linux", "linas");
 
         // 在Spring中，两种方式的实现，详见测试方法
 
