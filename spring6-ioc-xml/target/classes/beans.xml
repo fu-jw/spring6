@@ -118,11 +118,18 @@
 
     <!-- bean的生命周期测试 -->
     <bean id="userLife" class="com.fredo.iocxml.life.UserLife"
-           init-method="initMethod" destroy-method="destroyMethod">
+          scope="singleton"
+          init-method="initMethod" destroy-method="destroyMethod">
+        <!-- 作用域是prototype，销毁时并不调用destroyMethod方法 -->
         <property name="id" value="1"/>
         <property name="age" value="20"/>
         <property name="username" value="fredo"/>
         <property name="password" value="密码"/>
     </bean>
-
+    <!-- 以上配置只会执行，第1、2、4、6步
+        第3、5步需要配置后置处理器
+        后置处理器的配置是全局生效的，并不单指一个bean，因此需单独配置
+     -->
+    <!-- bean的后置处理器要放入IOC容器才能生效 -->
+    <bean id="myBeanProcessor" class="com.fredo.iocxml.life.MyBeanProcessor"/>
 </beans>
