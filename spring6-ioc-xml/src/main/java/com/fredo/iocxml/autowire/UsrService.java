@@ -1,6 +1,6 @@
 package com.fredo.iocxml.autowire;
 
-public interface UserService {
+public interface UsrService {
 
     void saveUser();
 

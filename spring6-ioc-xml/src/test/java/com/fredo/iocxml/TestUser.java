@@ -1,6 +1,6 @@
 package com.fredo.iocxml;
 
-import com.fredo.iocxml.autowire.UserController;
+import com.fredo.iocxml.autowire.UsrController;
 import com.fredo.iocxml.bean.UserDao;
 import com.fredo.iocxml.di.Book;
 import com.fredo.iocxml.di.Clazz;
@@ -180,7 +180,7 @@ public class TestUser {
     public void test8(){
         ClassPathXmlApplicationContext ioc = new ClassPathXmlApplicationContext("beans.xml");
 
-        UserController userController = ioc.getBean(UserController.class);
+        UsrController userController = ioc.getBean(UsrController.class);
         userController.saveUser();
     }
 }

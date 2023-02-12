@@ -1,6 +1,6 @@
 package com.fredo.iocxml.autowire;
 
-public class UserDaoImpl implements UserDao {
+public class UsrDaoImpl implements UsrDao {
 
     @Override
     public void saveUser() {

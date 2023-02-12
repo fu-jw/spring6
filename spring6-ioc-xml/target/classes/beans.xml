@@ -134,8 +134,8 @@
     <bean id="myBeanProcessor" class="com.fredo.iocxml.life.MyBeanProcessor"/>
 
     <!-- 基于XML的自动装配 -->
-    <bean id="usrController" class="com.fredo.iocxml.autowire.UserController" autowire="byType"/>
-    <bean id="usrService" class="com.fredo.iocxml.autowire.UserServiceImpl" autowire="byType"/>
-    <bean id="usrDao" class="com.fredo.iocxml.autowire.UserDaoImpl"/>
+    <bean id="usrController" class="com.fredo.iocxml.autowire.UsrController" autowire="byType"/>
+    <bean id="usrService" class="com.fredo.iocxml.autowire.UsrServiceImpl" autowire="byType"/>
+    <bean id="usrDao" class="com.fredo.iocxml.autowire.UsrDaoImpl"/>
 
 </beans>

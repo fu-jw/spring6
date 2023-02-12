@@ -1,6 +1,6 @@
 package com.fredo.iocxml.autowire;
 
-public interface UserDao {
+public interface UsrDao {
 
     void saveUser();
 
