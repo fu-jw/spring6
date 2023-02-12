@@ -133,6 +133,9 @@
     <!-- bean的后置处理器要放入IOC容器才能生效 -->
     <bean id="myBeanProcessor" class="com.fredo.iocxml.life.MyBeanProcessor"/>
 
-
+    <!-- 基于XML的自动装配 -->
+    <bean id="usrController" class="com.fredo.iocxml.autowire.UserController" autowire="byType"/>
+    <bean id="usrService" class="com.fredo.iocxml.autowire.UserServiceImpl" autowire="byType"/>
+    <bean id="usrDao" class="com.fredo.iocxml.autowire.UserDaoImpl"/>
 
 </beans>
