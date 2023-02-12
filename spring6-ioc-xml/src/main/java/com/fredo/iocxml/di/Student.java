@@ -9,17 +9,21 @@ public class Student {
 
     private String sex;
 
-    private Clazz clazz;
+    private Clazz clazz1;
+    private Clazz clazz2;
+    private Clazz clazz3;
 
     public Student() {
     }
 
-    public Student(Integer id, String name, Integer age, String sex, Clazz clazz) {
+    public Student(Integer id, String name, Integer age, String sex, Clazz clazz1, Clazz clazz2, Clazz clazz3) {
         this.id = id;
         this.name = name;
         this.age = age;
         this.sex = sex;
-        this.clazz = clazz;
+        this.clazz1 = clazz1;
+        this.clazz2 = clazz2;
+        this.clazz3 = clazz3;
     }
 
     public Integer getId() {
@@ -54,12 +58,28 @@ public class Student {
         this.sex = sex;
     }
 
-    public Clazz getClazz() {
-        return clazz;
+    public Clazz getClazz1() {
+        return clazz1;
     }
 
-    public void setClazz(Clazz clazz) {
-        this.clazz = clazz;
+    public void setClazz1(Clazz clazz1) {
+        this.clazz1 = clazz1;
+    }
+
+    public Clazz getClazz2() {
+        return clazz2;
+    }
+
+    public void setClazz2(Clazz clazz2) {
+        this.clazz2 = clazz2;
+    }
+
+    public Clazz getClazz3() {
+        return clazz3;
+    }
+
+    public void setClazz3(Clazz clazz3) {
+        this.clazz3 = clazz3;
     }
 
     @Override
@@ -69,7 +89,9 @@ public class Student {
                 ", name='" + name + '\'' +
                 ", age=" + age +
                 ", sex='" + sex + '\'' +
-                ", clazz=" + clazz +
+                ", clazz1=" + clazz1 +
+                ", clazz2=" + clazz2 +
+                ", clazz3=" + clazz3 +
                 '}';
     }
 }

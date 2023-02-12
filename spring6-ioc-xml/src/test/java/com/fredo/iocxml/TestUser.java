@@ -2,6 +2,7 @@ package com.fredo.iocxml;
 
 import com.fredo.iocxml.bean.UserDao;
 import com.fredo.iocxml.di.Book;
+import com.fredo.iocxml.di.Student;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
@@ -77,6 +78,14 @@ public class TestUser {
         // 1.依赖注入--setter
         Book book1 = (Book) ioc.getBean("book1");
         System.out.println(book1);
+    }
 
+    // 3.依赖注入--特殊值处理
+    @Test
+    public void test4(){
+        ApplicationContext ioc = new ClassPathXmlApplicationContext("beans.xml");
+        // 1.依赖注入--setter--对象属性
+        Student stu = (Student) ioc.getBean("stu");
+        System.out.println(stu);
     }
 }

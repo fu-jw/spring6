@@ -51,5 +51,43 @@
 <!--        <constructor-arg name="name" value="数学"/>-->
 <!--    </bean>-->
 
+    <!-- 注意：当setter注入和构造器混合使用时，setter的优先级更高，会保留setter的值 -->
+
+    <bean id="clazz1" class="com.fredo.iocxml.di.Clazz">
+        <property name="clazzId" value="1111"/>
+        <property name="clazzName" value="财源滚滚班"/>
+    </bean>
+
+    <bean id="clazz3" class="com.fredo.iocxml.di.Clazz"/>
+
+    <bean id="stu" class="com.fredo.iocxml.di.Student">
+        <property name="id" value="1001"/>
+        <property name="name" value="张三"/>
+        <property name="age" value="26"/>
+        <property name="sex" value="男"/>
+
+        <!-- 给对象类型属性赋值 -->
+        <!-- 方法一：引用外部bean，ref的值对应外部bean的id -->
+        <property name="clazz1" ref="clazz1"/>
+
+        <!-- 方法二：使用内部bean -->
+        <property name="clazz2">
+            <!-- 在一个bean中再声明一个bean就是内部bean -->
+            <!-- 内部bean只能用于给属性赋值，不能在外部通过IOC容器获取，因此可以省略id属性 -->
+            <bean id="clazzInner" class="com.fredo.iocxml.di.Clazz">
+                <property name="clazzId" value="2222"/>
+                <property name="clazzName" value="远大前程班"/>
+            </bean>
+        </property>
+
+        <!-- 方法三：级联属性赋值 -->
+        <property name="clazz3" ref="clazz3"/>
+        <property name="clazz3.clazzId" value="3333"/>
+        <property name="clazz3.clazzName" value="最强王者班"/>
+
+    </bean>
+
+
+
 
 </beans>
