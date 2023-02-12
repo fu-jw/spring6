@@ -88,4 +88,13 @@ public class TestUser {
         Student stu = (Student) ioc.getBean("stu");
         System.out.println(stu);
     }
+
+    // 3.依赖注入--特殊值处理
+    @Test
+    public void test5(){
+        ApplicationContext ioc = new ClassPathXmlApplicationContext("beans.xml");
+        // 1.依赖注入--setter--数组类型
+        Student stu = (Student) ioc.getBean("stu2");
+        System.out.println(stu);
+    }
 }

@@ -1,5 +1,7 @@
 package com.fredo.iocxml.di;
 
+import java.util.Arrays;
+
 public class Student {
     private Integer id;
 
@@ -13,10 +15,20 @@ public class Student {
     private Clazz clazz2;
     private Clazz clazz3;
 
+    private String[] hobbies;
+
+    public String[] getHobbies() {
+        return hobbies;
+    }
+
+    public void setHobbies(String[] hobbies) {
+        this.hobbies = hobbies;
+    }
+
     public Student() {
     }
 
-    public Student(Integer id, String name, Integer age, String sex, Clazz clazz1, Clazz clazz2, Clazz clazz3) {
+    public Student(Integer id, String name, Integer age, String sex, Clazz clazz1, Clazz clazz2, Clazz clazz3, String[] hobbies) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -24,6 +36,7 @@ public class Student {
         this.clazz1 = clazz1;
         this.clazz2 = clazz2;
         this.clazz3 = clazz3;
+        this.hobbies = hobbies;
     }
 
     public Integer getId() {
@@ -92,6 +105,7 @@ public class Student {
                 ", clazz1=" + clazz1 +
                 ", clazz2=" + clazz2 +
                 ", clazz3=" + clazz3 +
+                ", hobbies=" + Arrays.toString(hobbies) +
                 '}';
     }
 }

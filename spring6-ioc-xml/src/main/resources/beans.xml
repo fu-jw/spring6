@@ -87,7 +87,21 @@
 
     </bean>
 
-
-
+    <!-- 为数组类型属性赋值 -->
+    <bean id="stu2" class="com.fredo.iocxml.di.Student">
+        <property name="id" value="1002"/>
+        <property name="name" value="李四"/>
+        <property name="age" value="26"/>
+        <property name="sex" value="男"/>
+        <!-- ref属性：引用IOC容器中某个bean的id，将所对应的bean为属性赋值 -->
+        <property name="clazz1" ref="clazz1"/>
+        <property name="hobbies">
+            <array>
+                <value>抽烟</value>
+                <value>喝酒</value>
+                <value>烫头</value>
+            </array>
+        </property>
+    </bean>
 
 </beans>
