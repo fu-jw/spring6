@@ -131,5 +131,5 @@
         后置处理器的配置是全局生效的，并不单指一个bean，因此需单独配置
      -->
     <!-- bean的后置处理器要放入IOC容器才能生效 -->
-    <bean id="myBeanProcessor" class="com.fredo.iocxml.life.MyBeanProcessor"/>
+    <bean id="myBeanProcessor" class="com.fredo.iocxml.life.MyBeanProcessor" scope="prototype"/>
 </beans>

@@ -132,4 +132,7 @@
      -->
     <!-- bean的后置处理器要放入IOC容器才能生效 -->
     <bean id="myBeanProcessor" class="com.fredo.iocxml.life.MyBeanProcessor"/>
+
+
+
 </beans>
