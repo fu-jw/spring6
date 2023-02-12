@@ -1,6 +1,7 @@
 package com.fredo.iocxml.di;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class Student {
     private Integer id;

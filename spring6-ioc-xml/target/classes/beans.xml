@@ -104,4 +104,25 @@
         </property>
     </bean>
 
+    <!-- 为集合类型属性赋值 -->
+    <bean id="clazz2" class="com.fredo.iocxml.di.Clazz">
+        <property name="clazzId" value="2222"/>
+        <property name="clazzName" value="Javaee0222"/>
+        <property name="students">
+            <list>
+                <ref bean="stu"/>
+                <ref bean="stu2"/>
+            </list>
+        </property>
+    </bean>
+
+    <!-- bean的生命周期测试 -->
+    <bean id="userLife" class="com.fredo.iocxml.life.UserLife"
+           init-method="initMethod" destroy-method="destroyMethod">
+        <property name="id" value="1"/>
+        <property name="age" value="20"/>
+        <property name="username" value="fredo"/>
+        <property name="password" value="密码"/>
+    </bean>
+
 </beans>
