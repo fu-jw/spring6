@@ -7,8 +7,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class UserTest {
-    private Logger logger = LoggerFactory.getLogger(UserTest.class);
+public class AutoTest {
+    private Logger logger = LoggerFactory.getLogger(AutoTest.class);
 
     @Test
     public void testAnnotation(){
