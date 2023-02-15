@@ -1,5 +1,8 @@
 package com.fredo.dao;
 
+import com.fredo.anno.Bean;
+
+@Bean
 public class UserDaoImpl implements UserDao {
 
     @Override
