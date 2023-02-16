@@ -13,6 +13,7 @@
         <module>spring6-ioc-xml</module>
         <module>spring6-ioc-annotation</module>
         <module>spring6-ioc-oneself</module>
+        <module>spring6-aop</module>
     </modules>
 
     <properties>
