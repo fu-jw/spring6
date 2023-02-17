@@ -13,7 +13,7 @@ public class ProxyFactory {
         this.target = target;
     }
 
-    public Object getProxy(){
+    public Object getProxy() {
 
         /**
          * newProxyInstance()：创建一个代理实例
@@ -34,14 +34,14 @@ public class ProxyFactory {
                  */
                 Object result = null;
                 try {
-                    System.out.println("[动态代理][日志] "+method.getName()+"，参数："+ Arrays.toString(args));
+                    System.out.println("[动态代理][日志] " + method.getName() + "，参数：" + Arrays.toString(args));
                     result = method.invoke(target, args);
-                    System.out.println("[动态代理][日志] "+method.getName()+"，结果："+ result);
+                    System.out.println("[动态代理][日志] " + method.getName() + "，结果：" + result);
                 } catch (Exception e) {
                     e.printStackTrace();
-                    System.out.println("[动态代理][日志] "+method.getName()+"，异常："+e.getMessage());
+                    System.out.println("[动态代理][日志] " + method.getName() + "，异常：" + e.getMessage());
                 } finally {
-                    System.out.println("[动态代理][日志] "+method.getName()+"，方法执行完毕");
+                    System.out.println("[动态代理][日志] " + method.getName() + "，方法执行完毕");
                 }
                 return result;
             }
