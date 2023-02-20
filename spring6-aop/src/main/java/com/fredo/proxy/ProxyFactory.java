@@ -7,12 +7,14 @@ import java.util.Arrays;
 
 public class ProxyFactory {
 
+    // 目标对象
     private Object target;
 
     public ProxyFactory(Object target) {
         this.target = target;
     }
 
+    // 返回代理对象
     public Object getProxy() {
 
         /**

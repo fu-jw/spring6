@@ -16,4 +16,9 @@
     将来有任何日志需求，都通过这一个代理类来实现。
     这就需要使用动态代理技术了。
 
-    动态代理实现：
+    动态代理实现：ProxyFactory
+        静态方法 newProxyInstance 实现，
+        Proxy.newProxyInstance(classLoader, interfaces, invocationHandler)
+        1、classLoader：加载动态生成的代理类的类加载器
+        2、interfaces：目标对象实现的所有接口的class对象所组成的数组
+        3、invocationHandler：设置代理对象实现目标对象方法的过程，即代理类中如何重写接口中的抽象方法
