@@ -61,12 +61,13 @@ AOP
 基于XML的AOP
     配置文件：
     <context:component-scan base-package="com.fredo.aop.xml"></context:component-scan>
-
     <aop:config>
         <!--配置切面类-->
         <aop:aspect ref="loggerAspect">
+            <!--配置切点-->
             <aop:pointcut id="pointCut"
                        expression="execution(* com.fredo.aop.xml.CalculatorImpl.*(..))"/>
+            <!--配置通知五种类型-->
             <aop:before method="beforeMethod" pointcut-ref="pointCut"></aop:before>
             <aop:after method="afterMethod" pointcut-ref="pointCut"></aop:after>
             <aop:after-returning method="afterReturningMethod" returning="result" pointcut-ref="pointCut"></aop:after-returning>
