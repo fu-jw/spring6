@@ -36,9 +36,26 @@ AOP
     代理失效：
     有a，b两个目标方法，但是a方法内部调用了b方法，就会导致b方法的代理失效
 
+    使用步骤：
+    0.引用依赖
+        spring-aop
+        spring-aspects
+    1.配置文件中开启aop规范
+        <!--xmlns:aop="http://www.springframework.org/schema/aop"
+            http://www.springframework.org/schema/aop
+            http://www.springframework.org/schema/aop/spring-aop.xsd"-->
+    2.配置文件中开启aspectj的自动代理，为目标对象生成代理，即识别注解 @Aspect
+        <aop:aspectj-autoproxy/>
+    3.编写切面类，LogAspect
+    4.切面类中添加方法（即切点），方法中可以添加参数（即连接点信息、执行结果、异常信息）
+    5.切点方法上添加注解（即通知类型）
+    6.通知类型中设置切点表达式
+        value = "execution(public int com.fredo.aop.target.CalculatorLogImpl.*(..))"
+    7.重用切点表达式，避免相同配置重复写
 
-
-
+    切点重用
+        @Pointcut("execution(* com.fredo.aop.target.CalculatorLogImpl.*(..))")
+        public void pointCut(){}
 
 
 

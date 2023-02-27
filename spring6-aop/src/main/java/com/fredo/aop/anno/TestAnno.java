@@ -13,6 +13,6 @@ public class TestAnno {
         ApplicationContext ioc = new ClassPathXmlApplicationContext("bean.xml");
         Calculator cal = ioc.getBean(Calculator.class);
 
-        cal.add(2,3);
+        cal.div(2,1);
     }
 }
