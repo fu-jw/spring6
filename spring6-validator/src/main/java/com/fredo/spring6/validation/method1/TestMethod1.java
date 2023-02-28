@@ -8,7 +8,7 @@ public class TestMethod1 {
     public static void main(String[] args) {
         //创建person对象
         Person person = new Person();
-        person.setName("lucy");
+        person.setName(null);
         person.setAge(-1);
         
         // 创建Person对应的DataBinder
