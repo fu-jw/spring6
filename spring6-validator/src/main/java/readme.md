@@ -16,3 +16,4 @@ Spring Validation其实就是对Hibernate Validator进一步的封装，方便�
 0. 引依赖：hibernate-validator、jakarta.el
 1. 实体类：Person
 2. 实现Validator接口：PersonValidator
+3. 测试
