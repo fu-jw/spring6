@@ -90,5 +90,72 @@ pst.executeUpdate();
 conn.close();
 pst.close();
 ```
+## 二、声明式事务
+一系列操作在逻辑上是一个整体，要么都成功要么都失败
+### 1.特性
+#### 1.原子性
+Atomicity
+一系列操作组成一个在逻辑上不可分割的整体，要么都成功要么都失败
+#### 2.一致性
+Consistency
+一个事务执行之前和执行之后数据都必须处于一致性状态
+要么成功执行，得到正确结果
+要么执行失败，返回原始状态
+没有中间状态
+#### 3.隔离性
+Isolation
+事务与事务之间互不影响，互相隔离，不会查看到其他事务中间结果
+#### 4.持久性
+Durability
+事务执行后的结果可以永久保存下来
+
+### 2.编程式事务
+就是编程时自己组件事务
+```java
+Connection conn = ...;
+try {
+    // 开启事务：关闭事务的自动提交
+    conn.setAutoCommit(false);
+    // 核心操作...
+    // 提交事务
+    conn.commit();
+}catch(Exception e){
+    // 回滚事务
+    conn.rollBack();
+}finally{
+    // 释放数据库连接
+    conn.close();
+}
+```
+缺点：
+- 细节没有被屏蔽：具体操作过程中，所有细节都需要程序员自己来完成，比较繁琐。
+- 代码复用性不高：如果没有有效抽取出来，每次实现功能都需要自己编写代码，代码就没有得到复用。
+
+### 3.声明式事务
+既然事务控制的代码有规律可循，代码的结构基本是确定的，所以框架就可以将固定模式的代码抽取出来，进行相关的封装。
+封装起来后，我们只需要在配置文件中进行简单的配置即可完成操作。
+
+优点：
+- 提高开发效率
+- 消除了冗余的代码
+- 框架会综合考虑相关领域中在实际开发环境下有可能遇到的各种问题，进行了健壮性、性能等各个方面的优化
+
+使用步骤：
+1. 导入外部属性文件
+   <context:property-placeholder location="classpath:jdbc.properties"/>
+2. 配置数据源
+   <bean id="druidDataSource" class="com.alibaba.druid.pool.DruidDataSource">
+   <property name="url" value="${jdbc.url}"/>
+   <property name="driverClassName" value="${jdbc.driver}"/>
+   <property name="username" value="${jdbc.user}"/>
+   <property name="password" value="${jdbc.password}"/>
+   </bean>
+3. 配置事务管理器
+   <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+   <property name="dataSource" ref="druidDataSource"/>
+   </bean>
+4. 开启事务的注解驱动
+   <tx:annotation-driven transaction-manager="transactionManager" />
+
 
 
